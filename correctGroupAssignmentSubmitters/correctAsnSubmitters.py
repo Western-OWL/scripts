@@ -190,7 +190,7 @@ for userId in toAdd:
 	# The sequence name according to the upgrade script: ASN_SUBMISSION_SUBMITTERS_S
 	submissionId = groupsToSubmissions[toAdd[userId]]
 	statement = """insert into sakaiadmin.asn_submission_submitter (id, feedback, grade, submittee, submitter, submission_id) 
-	values (ASN_SUBMISSION_SUBMITTERS_S.nextval, "", "", 0, '{0}', '{1}');""".format(userId, submissionId)
+	values (ASN_SUBMISSION_SUBMITTERS_S.nextval, null, null, 0, '{0}', '{1}');""".format(userId, submissionId)
 	output(statement)
 
 output("commit;")
