@@ -1,5 +1,8 @@
-Assignments copies group memberships for group assignment submissions. For unknown reasons, these assignment submission group memberships sometimes mismatch the site's actual group memberships.
-Use the following steps to correct group assignments whose memberships are out of sync:
+# Correct Group Assignment Submitters
+
+For group assignment submissions, assignments represents the group memberships in its own table: asn_submission_submitter. For unknown reasons, this table's memberships sometimes mismatch the site's actual group memberships despite group locking.
+
+## Use the following steps to correct group assignments whose memberships are out of sync:
 
 1) Run and export the following queries. Do not include headers. Save them in ./inputFiles:
 
@@ -23,7 +26,8 @@ select id, feedback, grade, submittee, submitter, submission_id from sakaiadmin.
 ```
 
 2) Execute the following:
+```
 python3 correctAsnSubmitters.py
+```
 
-3) Watch for any warnings, test against a restore environmenti if possible. When confident to proceed, attach it to a ticket for the DBAs for production.
-
+3) Watch for any warnings, test against a restore environmenti if possible. When confident to proceed, attach outputFiles/output.sql to a ticket for the DBAs to execute against production.
