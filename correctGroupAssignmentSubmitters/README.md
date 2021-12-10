@@ -30,4 +30,4 @@ select id, feedback, grade, submittee, submitter, submission_id from sakaiadmin.
 python3 correctAsnSubmitters.py
 ```
 
-3) Watch for any warnings, test against a restore environmenti if possible. When confident to proceed, attach outputFiles/output.sql to a ticket for the DBAs to execute against production.
+3) Watch for any warnings. If the script succeeded, grab outputFiles/output.sql and execute it against a restore environment if possible. When confident to proceed, attach outputFiles/output.sql to a ticket for the DBAs to execute against production.
